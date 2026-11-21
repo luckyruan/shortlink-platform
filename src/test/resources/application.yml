@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:shortlink;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  task:
+    scheduling:
+      enabled: false
+
+short-link:
+  base-url: http://localhost:8080/r/
+  code-length: 8
+  cache-ttl: 24h
+  negative-cache-ttl: 1m
+  create-limit-per-minute: 60
+  counter-flush-interval-ms: 60000
